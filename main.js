@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("// const fetchUser = async (url) => {\n//   const resp = await fetch(url);\n//   const data = await resp.json();\n//   console.log(data[0]['Image Gallery'][0].src);\n//   const name = data[0]['Species Name'];\n\n//   const resp2 = await fetch(`https://www.fishwatch.gov/api/species/${name}`);\n//   const body = await resp2.json();\n//   console.log(body);\n// };\n\n// fetchUser('https://www.fishwatch.gov/api/species');\n\n\n//# sourceURL=webpack://capstone-module2/./src/index.js?");
+eval("// base url to fetch all the data from the API\nconst baseUrl = 'https://www.fishwatch.gov/api/species';\n\n// URL to fetch details about a particular fish from the api\nconst fishDetailUrl = 'https://www.fishwatch.gov/api/species/name_of_fish';\n\nconst generateMarkup = (fishes) => {\n  console.log(fishes);\n};\n\nconst fetchFishes = async (url) => {\n  const response = await fetch(url);\n  const fishes = await response.json();\n  generateMarkup(fishes);\n};\n\nwindow.addEventListener('load', () => {\n  fetchFishes(baseUrl);\n});\n\n\n//# sourceURL=webpack://capstone-module2/./src/index.js?");
 
 /***/ })
 
