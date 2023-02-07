@@ -173,7 +173,53 @@ footer {
   background: white;
   border-radius: 100%;
 }
+.comment-popup-section{
 
+  width: 100%;
+  backdrop-filter: blur(5px);
+  padding-top: 50px;
+  overflow: auto;
+  padding: 50px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  display: none;
+
+  
+}
+.active{
+  display: block;
+}
+.comment-popup{
+ background: #add8e6;
+ width: 50%;
+ margin: auto;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ text-align: center;
+ padding: 20px;
+ border: 2px solid black;
+}
+
+.close-popup{
+  background:unset;
+ align-self: flex-end;
+ font-size: 40px;
+ font-weight: bolder;
+  
+}
+.details{
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 50px;
+}
+#form{
+  display: flex;
+  flex-direction: column;
+  gap :10px
+}
 @media screen and (min-width: 700px) {
   .fishes_container {
     display: grid;
@@ -203,6 +249,7 @@ footer {
     list-style: none;
   }
 
+ 
   #menu {
     display: none;
   }
