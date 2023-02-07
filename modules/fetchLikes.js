@@ -6,7 +6,7 @@ const fetchLikes = async (url) => {
     const likes = await response.json();
     return likes;
   } catch (error) {
-    console.log(error);
+    return error;
   }
 };
 export default fetchLikes;

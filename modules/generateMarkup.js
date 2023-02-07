@@ -1,8 +1,8 @@
 import handleLike from './handleLike.js';
 import fetchFishDetails from './fetchFishDetails.js';
-import { appId } from '../src/index.js';
 import itemsCount from './itemCount.js';
 
+const appId = 'daS11VuHj0e3k7bb2TZc';
 const fishDetailUrl = 'https://www.fishwatch.gov/api/species';
 const generateMarkup = (fishes, fishSection, likes) => {
   const fishesContainer = document.createElement('section');
@@ -27,10 +27,9 @@ const generateMarkup = (fishes, fishSection, likes) => {
     fishImg.alt = name;
     const fishArray = fish['Image Gallery'];
     if (fish['Image Gallery']) {
-      fishImg.src =
-        fishArray instanceof Array
-          ? fish['Image Gallery'][0]?.src
-          : fish['Image Gallery'].src;
+      fishImg.src = fishArray instanceof Array
+        ? fish['Image Gallery'][0]?.src
+        : fish['Image Gallery'].src;
     }
 
     const nameContainer = document.createElement('div');
@@ -63,8 +62,10 @@ const generateMarkup = (fishes, fishSection, likes) => {
     commentBtn.className = 'comment_btn';
     commentBtn.innerText = 'comment';
     commentBtn.addEventListener('click', async () => {
-      const fishDetails = await fetchFishDetails(fishDetailUrl, fish['Species Name']);
-      console.log(fishDetails);
+      const fishDetails = await fetchFishDetails(
+        fishDetailUrl,
+        fish['Species Name'],
+      );
       const fishArray = fishDetails[0]['Image Gallery'];
       let imageSrc = '';
       if (fishDetails[0]['Image Gallery']) {
