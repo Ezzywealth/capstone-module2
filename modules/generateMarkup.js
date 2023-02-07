@@ -44,33 +44,31 @@ const generateMarkup = (fishes, fishSection) => {
     const btnContainer = document.createElement('div');
     btnContainer.className = 'btn_container';
     const commentBtn = document.createElement('button');
-    const commentPopup=document.querySelector('.comment-popup-section');
- 
-
+    const commentPopup = document.querySelector('.comment-popup-section');
 
     commentBtn.className = 'comment_btn';
     commentBtn.innerText = 'comment';
-    commentBtn.addEventListener('click', async() => {
-     const fishDetails= await fetchFishDetails(fishDetailUrl, fish['Species Name']);
-     console.log(fishDetails);
-     const fishArray = fishDetails[0]['Image Gallery'];
-     let imageSrc='';
-    if (fishDetails[0]['Image Gallery']) {
-      imageSrc = fishArray instanceof Array
-        ? fishDetails[0]['Image Gallery'][0]?.src
-        : fishDetails[0]['Image Gallery'].src;
-    }
-      commentPopup.classList.add('active')
-      commentPopup.innerHTML=`<div class="comment-popup">
+    commentBtn.addEventListener('click', async () => {
+      const fishDetails = await fetchFishDetails(fishDetailUrl, fish['Species Name']);
+      console.log(fishDetails);
+      const fishArray = fishDetails[0]['Image Gallery'];
+      let imageSrc = '';
+      if (fishDetails[0]['Image Gallery']) {
+        imageSrc = fishArray instanceof Array
+          ? fishDetails[0]['Image Gallery'][0]?.src
+          : fishDetails[0]['Image Gallery'].src;
+      }
+      commentPopup.classList.add('active');
+      commentPopup.innerHTML = `<div class="comment-popup">
       <button class="close-popup">X</button>
       <img src="${imageSrc}" alt="">
 
       <div>
         <h2>${fishDetails[0]['Species Name']}</h2>
         <div class="details">
-          <h3>Calories: ${fishDetails[0]['Calories']}</h3>
-          <h3>Cholesterol: ${fishDetails[0]['Cholesterol']}</h3>
-          <h3>Protein: ${fishDetails[0]['Protein']}</h3>
+          <h3>Calories: ${fishDetails[0].Calories}</h3>
+          <h3>Cholesterol: ${fishDetails[0].Cholesterol}</h3>
+          <h3>Protein: ${fishDetails[0].Protein}</h3>
           <h3>Serving Weight: ${fishDetails[0]['Serving Weight']}</h3>
         </div>
       </div>
@@ -90,16 +88,13 @@ const generateMarkup = (fishes, fishSection) => {
       </form>
 
      </div>
-    </div>`
-    const closePopup= document.querySelector('.close-popup');
-    closePopup.addEventListener('click',()=>{
-      commentPopup.classList.remove('active')
-    })
- 
+    </div>`;
+      const closePopup = document.querySelector('.close-popup');
+      closePopup.addEventListener('click', () => {
+        commentPopup.classList.remove('active');
+      });
     });
 
-
-      
     const reserveBtn = document.createElement('button');
     reserveBtn.className = 'reserve_btn';
     reserveBtn.innerText = 'Reservation';
