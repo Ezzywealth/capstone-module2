@@ -15,7 +15,10 @@ const fetchFishes = async (url, numOfFishes, fishSection) => {
         fishes
           .slice(0, numOfFishes)
           .filter((fish) => fish['Image Gallery'] !== null)
-          .filter((fish) => fish['Species Name'] !== 'Sablefish'),
+          .filter((fish) => fish['Species Name'] !== 'Sablefish')
+          .filter(
+            (fish) => fish['Species Name'] !== 'Hard Clam/Northern Quahog',
+          ),
         fishSection,
         fetchedLikes,
       );
