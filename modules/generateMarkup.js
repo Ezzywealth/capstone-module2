@@ -66,10 +66,10 @@ const generateMarkup = (fishes, fishSection) => {
       <div>
         <h2>${fishDetails[0]['Species Name']}</h2>
         <div class="details">
-          <h3>Calories: ${fishDetails[0].Calories}</h3>
-          <h3>Cholesterol: ${fishDetails[0].Cholesterol}</h3>
-          <h3>Protein: ${fishDetails[0].Protein}</h3>
-          <h3>Serving Weight: ${fishDetails[0]['Serving Weight']}</h3>
+          <h3>Calories:${fishDetails[0].Calories}</h3>
+          <h3>Cholesterol:${fishDetails[0].Cholesterol}</h3>
+          <h3>Protein:${fishDetails[0].Protein}</h3>
+          <h3>Serving Weight:${fishDetails[0]['Serving Weight']}</h3>
         </div>
       </div>
      <div class="comment-container">
