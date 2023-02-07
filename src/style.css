@@ -13,11 +13,24 @@ body {
   font-size: 2rem;
   color: #32516b;
   margin: 0;
-  margin-top: 10rem;
 }
 
 #fish_container {
   margin-top: 100px;
+}
+
+.header {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 10rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.fish_count {
+  margin: 0;
+  font-size: 2rem;
+  color: #32516b;
 }
 
 .fishes_container {

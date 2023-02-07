@@ -1,12 +1,21 @@
+import handleLike from './handleLike.js';
 import fetchFishDetails from './fetchFishDetails.js';
+import { appId } from '../src/index.js';
+import itemsCount from './itemCount.js';
 
 const fishDetailUrl = 'https://www.fishwatch.gov/api/species';
-const generateMarkup = (fishes, fishSection) => {
+const generateMarkup = (fishes, fishSection, likes) => {
   const fishesContainer = document.createElement('section');
   fishesContainer.className = 'fishes_container';
-
   fishes.forEach((fish) => {
-    let likes = 0;
+    const name = fish['Species Name'];
+    const like = likes.filter((like) => {
+      if (like.item_id === fish['Species Name']) {
+        return like.likes;
+      }
+      return 0;
+    });
+
     const fishContainer = document.createElement('div');
     fishContainer.className = 'fish_container';
 
@@ -14,32 +23,37 @@ const generateMarkup = (fishes, fishSection) => {
     const imgContainer = document.createElement('div');
     imgContainer.className = 'img_container';
     fishImg.className = 'fish_img';
-    fishImg.alt = fish['Species Name'];
+
+    fishImg.alt = name;
     const fishArray = fish['Image Gallery'];
     if (fish['Image Gallery']) {
-      fishImg.src = fishArray instanceof Array
-        ? fish['Image Gallery'][0]?.src
-        : fish['Image Gallery'].src;
+      fishImg.src =
+        fishArray instanceof Array
+          ? fish['Image Gallery'][0]?.src
+          : fish['Image Gallery'].src;
     }
 
     const nameContainer = document.createElement('div');
     nameContainer.className = 'name_container';
     const fishName = document.createElement('h3');
     fishName.className = 'fish_name';
-    fishName.innerText = fish['Species Name'];
+    fishName.innerText = name;
 
     const likeContainer = document.createElement('div');
     likeContainer.className = 'like_container';
     const likeIcon = document.createElement('span');
     likeIcon.className = 'material-symbols-outlined';
     likeIcon.innerText = 'favorite';
+    let likesCount = like.length < 1 ? 0 : like[0].likes;
+    const likeCount = document.createElement('h4');
     likeIcon.addEventListener('click', () => {
-      likes += 1;
+      handleLike(name, appId);
+      likesCount += 1;
+      likeCount.innerText = `${likesCount} likes`;
     });
 
-    const likeCount = document.createElement('h4');
     likeCount.className = 'like_count';
-    likeCount.innerText = `${likes} likes`;
+    likeCount.innerText = `${likesCount} likes`;
 
     const btnContainer = document.createElement('div');
     btnContainer.className = 'btn_container';
@@ -67,6 +81,7 @@ const generateMarkup = (fishes, fishSection) => {
 
     fishesContainer.appendChild(fishContainer);
   });
+  itemsCount(fishesContainer);
   fishSection.appendChild(fishesContainer);
 };
 export default generateMarkup;
