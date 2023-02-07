@@ -7,26 +7,43 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("// const fetchUser = async (url) => {\n//   const resp = await fetch(url);\n//   const data = await resp.json();\n//   console.log(data[0]['Image Gallery'][0].src);\n//   const name = data[0]['Species Name'];\n\n//   const resp2 = await fetch(`https://www.fishwatch.gov/api/species/${name}`);\n//   const body = await resp2.json();\n//   console.log(body);\n// };\n\n// fetchUser('https://www.fishwatch.gov/api/species');\n\n\n//# sourceURL=webpack://capstone-module2/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nObject(function webpackMissingModule() { var e = new Error(\"Cannot find module './style.css'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\n\r\n// base url to fetch all the data from the API\r\n// const baseUrl = 'https://www.fishwatch.gov/api/species';\r\n\r\n// URL to fetch details about a particular fish from the api\r\n// const fishDetailUrl = 'https://www.fishwatch.gov/api/species/name_of_fish';\r\n\n\n//# sourceURL=webpack://capstone-module2/./src/index.js?");
 
 /***/ })
 
 /******/ 	});
+/************************************************************************/
+/******/ 	// The require scope
+/******/ 	var __webpack_require__ = {};
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /************************************************************************/
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./src/index.js"]();
+/******/ 	__webpack_modules__["./src/index.js"](0, __webpack_exports__, __webpack_require__);
 /******/ 	
 /******/ })()
 ;
