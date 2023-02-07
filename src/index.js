@@ -1,12 +1,5 @@
-// const fetchUser = async (url) => {
-//   const resp = await fetch(url);
-//   const data = await resp.json();
-//   console.log(data[0]['Image Gallery'][0].src);
-//   const name = data[0]['Species Name'];
+// base url to fetch all the data from the API
+// const baseUrl = 'https://www.fishwatch.gov/api/species';
 
-//   const resp2 = await fetch(`https://www.fishwatch.gov/api/species/${name}`);
-//   const body = await resp2.json();
-//   console.log(body);
-// };
-
-// fetchUser('https://www.fishwatch.gov/api/species');
+// URL to fetch details about a particular fish from the api
+// const fishDetailUrl = 'https://www.fishwatch.gov/api/species/name_of_fish';
