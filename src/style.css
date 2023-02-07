@@ -141,14 +141,12 @@ main {
   background-color: #091e27;
   flex-direction: column;
   position: fixed;
-  bottom: 0;
   left: -100%;
   top: 0;
   bottom: 0;
   height: 100%;
   padding: 20px;
   gap: 2rem;
-  animation-name: slide-in;
   animation: slide-in 2s forwards;
 }
 
@@ -161,6 +159,7 @@ main {
     left: -110%;
     right: 110%;
   }
+
   100% {
     left: 0;
     right: 0;
