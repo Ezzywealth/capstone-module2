@@ -1,3 +1,4 @@
+import './style.css';
 // base url to fetch all the data from the API
 // const baseUrl = 'https://www.fishwatch.gov/api/species';
 
