@@ -262,13 +262,30 @@ footer {
   align-items: center;
   text-align: center;
   padding: 10px;
-  border: 2px solid black;
+  border: 2px solid #0093d0;
+  color: #314c61;
+  border-radius: 10px;
+}
+
+.image_container {
+  width: 500px;
+  border-radius: 5px;
+}
+
+.image_container img {
+  border-radius: 10px;
+}
+
+.popup_title {
+  margin: 0;
+  margin-bottom: 1rem;
+  color: #091e27;
 }
 
 .close-popup {
   background: unset;
   align-self: flex-end;
-  font-size: 40px;
+  font-size: 20px;
   font-weight: bolder;
 }
 
@@ -278,10 +295,33 @@ footer {
   gap: 10px;
 }
 
+.details h3 {
+  margin: 0;
+  color: #303e4b;
+  font-size: 1rem;
+}
+
 #form {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-top: 1rem;
+}
+
+input,
+textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+.add-comment-block {
+  margin-top: 1rem;
 }
 
 @media screen and (min-width: 700px) {
@@ -343,6 +383,14 @@ footer {
     display: none;
   }
 
+  #comment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+    width: 100%;
+  }
+
   .active {
     display: block;
   }
@@ -356,19 +404,21 @@ footer {
     align-items: center;
     text-align: center;
     padding: 20px;
-    border: 2px solid black;
+    padding-top: 0;
   }
 
   .close-popup {
     background: unset;
     align-self: flex-end;
-    font-size: 40px;
+    font-size: 20px;
     font-weight: bolder;
   }
 
   .details {
     display: grid;
     grid-template-columns: auto auto;
-    gap: 50px;
+    row-gap: 25px;
+    column-gap: 40px;
+    margin-bottom: 1rem;
   }
 }

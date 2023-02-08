@@ -1,10 +1,12 @@
 const generatePopup = (commentPopup, fishDetails, imageSrc) => {
   commentPopup.innerHTML = `<div class="comment-popup">
       <button class="close-popup">X</button>
+      <div class='image_container'>
       <img src="${imageSrc}" alt="">
+      </div>
 
       <div>
-        <h2>${fishDetails[0]['Species Name']}</h2>
+        <h2 class='popup_title'>${fishDetails[0]['Species Name']}</h2>
         <div class="details">
           <h3>Calories:${fishDetails[0].Calories}</h3>
           <h3>Cholesterol:${fishDetails[0].Cholesterol}</h3>
