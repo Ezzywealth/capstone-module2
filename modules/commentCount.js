@@ -3,7 +3,6 @@ const commentCount = (section) => {
 
   const items = Array.from(section.children);
   commentsContainer.innerText += ` (${items.length})`;
-
   return items;
 };
 export default commentCount;

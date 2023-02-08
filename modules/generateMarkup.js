@@ -1,7 +1,7 @@
 import handleLike from './handleLike.js';
 import fetchFishDetails from './fetchFishDetails.js';
 import itemsCount from './itemCount.js';
-// import fetchComments from './fetchComment.js';
+import fetchComments from './fetchComment.js';
 import commentCount from './commentCount.js';
 
 const appId = 'daS11VuHj0e3k7bb2TZc';
@@ -64,8 +64,8 @@ const generateMarkup = (fishes, fishSection, likes) => {
     commentBtn.className = 'comment_btn';
     commentBtn.innerText = 'comment';
     commentBtn.addEventListener('click', async () => {
-      // const commentsUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments?item_id=${name}`;
-      // const comments = await fetchComments(commentsUrl) || [];
+      const commentsUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments?item_id=${name}`;
+      const comments = (await fetchComments(commentsUrl)) || [];
 
       const fishDetails = await fetchFishDetails(
         fishDetailUrl,
@@ -123,16 +123,15 @@ const generateMarkup = (fishes, fishSection, likes) => {
       const commentInput = document.getElementById('comment');
       const submitComment = document.getElementById('form');
       commentsContainer.innerHTML = '';
-      // comments?.forEach((item) => {
-      //   // const { creation_date:creationDate, username, comment } = item;
-      //   const newComments = document.createElement('div');
-      //   newComments.className = 'comments-list';
-      //   // newComments.innerText = `${creationDate} ${username}:${comment}`;
-      //   // commentsContainer.appendChild(newComments);
-      // });
+      comments?.forEach((comment) => {
+        const newComments = document.createElement('div');
+        newComments.className = 'comments-list';
+        newComments.innerText = ` ${comment.creation_date} ${comment.username} : ${comment.comment} `;
+        commentsContainer.appendChild(newComments);
+      });
       commentCount(commentsContainer);
-
-      const submitComments = async (appId, username, comment) => {
+      // start
+      const submitComments = async (username, comment) => {
         try {
           const data = { item_id: name, username, comment };
           const options = {

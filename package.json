@@ -22,7 +22,6 @@
   "homepage": "https://github.com/Ezzywealth/capstone-module2#readme",
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.20.11",
-    "babel-eslint": "^10.1.0",
     "css-loader": "^6.7.3",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
@@ -42,6 +41,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
+    "@babel/eslint-parser": "^7.19.1",
     "css-loader": "^6.7.3",
     "file-loader": "^6.2.0",
     "style-loader": "^3.3.1"
