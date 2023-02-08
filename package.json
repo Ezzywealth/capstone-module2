@@ -9,6 +9,9 @@
     "start": "webpack serve --open",
     "build": "webpack"
   },
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Ezzywealth/capstone-module2.git"
@@ -44,6 +47,7 @@
   "dependencies": {
     "css-loader": "^6.7.3",
     "file-loader": "^6.2.0",
+    "jest-environment-jsdom": "^29.4.2",
     "style-loader": "^3.3.1"
   }
 }
