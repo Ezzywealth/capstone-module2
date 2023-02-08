@@ -253,6 +253,11 @@ footer {
   display: block;
 }
 
+.newComment {
+  display: flex;
+  gap: 0.5rem;
+}
+
 .comment-popup {
   background: #add8e6;
   width: 100%;
@@ -389,6 +394,11 @@ textarea:focus {
     gap: 0.5rem;
     align-items: flex-start;
     width: 100%;
+  }
+
+  .comments-list {
+    display: flex;
+    gap: 0.5rem;
   }
 
   .active {

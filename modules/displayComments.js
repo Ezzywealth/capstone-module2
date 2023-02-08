@@ -7,10 +7,13 @@ const displayComments = (comments, commentsContainer) => {
     const nameSpan = document.createElement('span');
     nameSpan.innerText = username;
     const commentSpan = document.createElement('span');
+    const dividerSpan = document.createElement('span');
+    dividerSpan.innerText = ':';
     commentSpan.innerText = comment;
     newComments.className = 'comments-list';
     newComments.appendChild(dateSpan);
     newComments.appendChild(nameSpan);
+    newComments.appendChild(dividerSpan);
     newComments.appendChild(commentSpan);
     commentsContainer.appendChild(newComments);
   });
