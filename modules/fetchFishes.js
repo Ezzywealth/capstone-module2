@@ -29,6 +29,4 @@ const fetchFishes = async (url, numOfFishes, fishSection) => {
   }
 };
 
-
-
 export default fetchFishes;

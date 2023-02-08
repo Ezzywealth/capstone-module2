@@ -4,12 +4,11 @@ const fetchComments = async (url) => {
       method: 'GET',
     });
     const comments = await response.json();
- 
-    if(comments.error){
-      console.log("No comment for this fish")
-      return 
+
+    if (comments.error) {
+      return comments.error;
     }
-    console.log(comments)
+
     return comments;
   } catch (error) {
     return error;
