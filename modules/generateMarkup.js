@@ -1,6 +1,8 @@
 import handleLike from './handleLike.js';
 import fetchFishDetails from './fetchFishDetails.js';
 import itemsCount from './itemCount.js';
+import fetchComments from './fetchComment.js';
+import commentCount from './commentCount.js';
 
 const appId = 'daS11VuHj0e3k7bb2TZc';
 const fishDetailUrl = 'https://www.fishwatch.gov/api/species';
@@ -61,6 +63,9 @@ const generateMarkup = (fishes, fishSection, likes) => {
     commentBtn.className = 'comment_btn';
     commentBtn.innerText = 'comment';
     commentBtn.addEventListener('click', async () => {
+      const commentsUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments?item_id=${name}`;
+      const comments = (await fetchComments(commentsUrl)) || [];
+
       const fishDetails = await fetchFishDetails(
         fishDetailUrl,
         fish['Species Name'],
@@ -89,8 +94,8 @@ const generateMarkup = (fishes, fishSection, likes) => {
         </div>
       </div>
      <div class="comment-container">
-      <h3>Comments </h3>
-      <div class="comment-list">
+      <h3 id="comment-title">Comments </h3>
+      <div id="comment-list">
 
       </div>
      </div>
@@ -99,7 +104,7 @@ const generateMarkup = (fishes, fishSection, likes) => {
       <h3>Add a comment</h3>
       <form action="" id="form">
         <input type="text" id="name" placeholder="Your name">
-        <textarea name="" id="" cols="30" rows="10" placeholder="Your insights"></textarea>
+        <textarea name="" id="comment" cols="30" rows="10" placeholder="Your insights"></textarea>
         <button class"add-comment">Add comment</button>
       </form>
 
@@ -109,6 +114,46 @@ const generateMarkup = (fishes, fishSection, likes) => {
       closePopup.addEventListener('click', () => {
         commentPopup.classList.remove('active');
       });
+      // Function to submit a comment
+
+      const commentUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments`;
+      const commentsContainer = document.getElementById('comment-list');
+      const usernameInput = document.getElementById('name');
+      const commentInput = document.getElementById('comment');
+      const submitComment = document.getElementById('form');
+      commentsContainer.innerHTML = '';
+      comments?.forEach((comment) => {
+        const newComments = document.createElement('div');
+        newComments.className = 'comments-list';
+        newComments.innerText = ` ${comment.creation_date} ${comment.username} : ${comment.comment} `;
+        commentsContainer.appendChild(newComments);
+      });
+      commentCount(commentsContainer);
+      // start
+      const submitComments = async (username, comment) => {
+        try {
+          const data = { item_id: name, username, comment };
+          const options = {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: { 'Content-Type': 'application/json' },
+          };
+          const response = await fetch(commentUrl, options);
+          const result = await response.text();
+          return result;
+        } catch (error) {
+          return error;
+        }
+      };
+
+      // Submit button click event handler
+      submitComment.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const username = usernameInput.value;
+        const comment = commentInput.value;
+        submitComments(appId, username, comment);
+      });
+      // end
     });
 
     const reserveBtn = document.createElement('button');
