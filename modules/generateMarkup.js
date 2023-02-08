@@ -26,10 +26,9 @@ const generateMarkup = (fishes, fishSection, likes) => {
     fishImg.alt = name;
     const fishArray = fish['Image Gallery'];
     if (fish['Image Gallery']) {
-      fishImg.src =
-        fishArray instanceof Array
-          ? fish['Image Gallery'][0]?.src
-          : fish['Image Gallery'].src;
+      fishImg.src = fishArray instanceof Array
+        ? fish['Image Gallery'][0]?.src
+        : fish['Image Gallery'].src;
     }
 
     const nameContainer = document.createElement('div');
@@ -64,16 +63,15 @@ const generateMarkup = (fishes, fishSection, likes) => {
     commentBtn.addEventListener('click', async () => {
       const fishDetails = await fetchFishDetails(
         fishDetailUrl,
-        fish['Species Name']
+        fish['Species Name'],
       );
       const fishArray = fishDetails[0]['Image Gallery'];
 
       let imageSrc = '';
       if (fishDetails[0]['Image Gallery']) {
-        imageSrc =
-          fishArray instanceof Array
-            ? fishDetails[0]['Image Gallery'][0]?.src
-            : fishDetails[0]['Image Gallery'].src;
+        imageSrc = fishArray instanceof Array
+          ? fishDetails[0]['Image Gallery'][0]?.src
+          : fishDetails[0]['Image Gallery'].src;
       }
 
       commentPopup.classList.add('active');
