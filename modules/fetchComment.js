@@ -4,7 +4,6 @@ const fetchComments = async (url) => {
       method: 'GET',
     });
     const comments = await response.json();
-
     if (comments.error) {
       return 0;
     }

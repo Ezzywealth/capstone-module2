@@ -1,21 +1,19 @@
 import handleLike from './handleLike.js';
-import fetchFishDetails from './fetchFishDetails.js';
 import itemsCount from './itemCount.js';
-import fetchComments from './fetchComment.js';
-import commentCount from './commentCount.js';
+import displayPopup from './displayPopup.js';
+import displayLikes from './displayLikes.js';
 
 const appId = 'daS11VuHj0e3k7bb2TZc';
 const fishDetailUrl = 'https://www.fishwatch.gov/api/species';
+
+const commentPopup = document.querySelector('.comment-popup-section');
 const generateMarkup = (fishes, fishSection, likes) => {
   const fishesContainer = document.querySelector('.fishes_container');
   fishes.forEach((fish) => {
     const name = fish['Species Name'];
-    const like = likes.filter((like) => {
-      if (like.item_id === fish['Species Name']) {
-        return like.likes;
-      }
-      return 0;
-    });
+
+    // get likes count for each item
+    const like = displayLikes(likes, fish);
 
     const fishContainer = document.createElement('div');
     fishContainer.className = 'fish_container';
@@ -55,111 +53,26 @@ const generateMarkup = (fishes, fishSection, likes) => {
     likeCount.className = 'like_count';
     likeCount.innerText = `${likesCount} likes`;
 
+    // comment and reservationbutton container
     const btnContainer = document.createElement('div');
     btnContainer.className = 'btn_container';
-    const commentBtn = document.createElement('button');
-    const commentPopup = document.querySelector('.comment-popup-section');
 
+    // creates a button for the comment popup
+    const commentBtn = document.createElement('button');
     commentBtn.className = 'comment_btn';
     commentBtn.innerText = 'comment';
+
+    // logic to display the popup when the button is clicked
     commentBtn.addEventListener('click', async () => {
-      const commentsUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments?item_id=${name}`;
-      const comments = (await fetchComments(commentsUrl)) || [];
-
-      const fishDetails = await fetchFishDetails(
-        fishDetailUrl,
-        fish['Species Name'],
-      );
-      const fishArray = fishDetails[0]['Image Gallery'];
-
-      let imageSrc = '';
-      if (fishDetails[0]['Image Gallery']) {
-        imageSrc = fishArray instanceof Array
-          ? fishDetails[0]['Image Gallery'][0]?.src
-          : fishDetails[0]['Image Gallery'].src;
-      }
-
-      commentPopup.classList.add('active');
-      commentPopup.innerHTML = `<div class="comment-popup">
-      <button class="close-popup">X</button>
-      <img src="${imageSrc}" alt="">
-
-      <div>
-        <h2>${fishDetails[0]['Species Name']}</h2>
-        <div class="details">
-          <h3>Calories:${fishDetails[0].Calories}</h3>
-          <h3>Cholesterol:${fishDetails[0].Cholesterol}</h3>
-          <h3>Protein:${fishDetails[0].Protein}</h3>
-          <h3>Serving Weight:${fishDetails[0]['Serving Weight']}</h3>
-        </div>
-      </div>
-     <div class="comment-container">
-      <h3 id="comment-title">Comments </h3>
-      <div id="comment-list">
-
-      </div>
-     </div>
-
-     <div class="add-comment-block">
-      <h3>Add a comment</h3>
-      <form action="" id="form">
-        <input type="text" id="name" placeholder="Your name">
-        <textarea name="" id="comment" cols="30" rows="10" placeholder="Your insights"></textarea>
-        <button class"add-comment">Add comment</button>
-      </form>
-
-     </div>
-    </div>`;
-      const closePopup = document.querySelector('.close-popup');
-      closePopup.addEventListener('click', () => {
-        commentPopup.classList.remove('active');
-      });
-      // Function to submit a comment
-
-      const commentUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments`;
-      const commentsContainer = document.getElementById('comment-list');
-      const usernameInput = document.getElementById('name');
-      const commentInput = document.getElementById('comment');
-      const submitComment = document.getElementById('form');
-      commentsContainer.innerHTML = '';
-      comments?.forEach((comment) => {
-        const newComments = document.createElement('div');
-        newComments.className = 'comments-list';
-        newComments.innerText = ` ${comment.creation_date} ${comment.username} : ${comment.comment} `;
-        commentsContainer.appendChild(newComments);
-      });
-      commentCount(commentsContainer);
-      // start
-      const submitComments = async (username, comment) => {
-        try {
-          const data = { item_id: name, username, comment };
-          const options = {
-            method: 'POST',
-            body: JSON.stringify(data),
-            headers: { 'Content-Type': 'application/json' },
-          };
-          const response = await fetch(commentUrl, options);
-          const result = await response.text();
-          return result;
-        } catch (error) {
-          return error;
-        }
-      };
-
-      // Submit button click event handler
-      submitComment.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const username = usernameInput.value;
-        const comment = commentInput.value;
-        submitComments(appId, username, comment);
-      });
-      // end
+      displayPopup(fishDetailUrl, fish, name, commentPopup, appId);
     });
 
+    // logic for creating the reservation button
     const reserveBtn = document.createElement('button');
     reserveBtn.className = 'reserve_btn';
     reserveBtn.innerText = 'Reservation';
 
+    // logic for appending all the created nodes
     nameContainer.appendChild(fishName);
     nameContainer.appendChild(likeContainer);
     likeContainer.appendChild(likeIcon);
@@ -170,7 +83,6 @@ const generateMarkup = (fishes, fishSection, likes) => {
     btnContainer.appendChild(commentBtn);
     btnContainer.appendChild(reserveBtn);
     fishContainer.appendChild(btnContainer);
-
     fishesContainer.appendChild(fishContainer);
   });
   itemsCount(fishesContainer);
