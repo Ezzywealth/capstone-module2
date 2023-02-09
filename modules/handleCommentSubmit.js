@@ -8,6 +8,7 @@ const submitComments = async (name, commentUrl, username, comment) => {
     };
     const response = await fetch(commentUrl, options);
     const result = await response.text();
+
     return result;
   } catch (error) {
     return error;

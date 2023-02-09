@@ -4,7 +4,6 @@ import displayPopup from './displayPopup.js';
 import displayLikes from './displayLikes.js';
 
 const appId = 'daS11VuHj0e3k7bb2TZc';
-const fishDetailUrl = 'https://www.fishwatch.gov/api/species';
 
 const commentPopup = document.querySelector('.comment-popup-section');
 const generateMarkup = (fishes, fishSection, likes) => {
@@ -27,8 +26,8 @@ const generateMarkup = (fishes, fishSection, likes) => {
     const fishArray = fish['Image Gallery'];
     if (fish['Image Gallery']) {
       fishImg.src = fishArray instanceof Array
-        ? fish['Image Gallery'][0]?.src
-        : fish['Image Gallery'].src;
+          ? fish['Image Gallery'][0]?.src
+          : fish['Image Gallery'].src;
     }
 
     const nameContainer = document.createElement('div');
@@ -64,7 +63,7 @@ const generateMarkup = (fishes, fishSection, likes) => {
 
     // logic to display the popup when the button is clicked
     commentBtn.addEventListener('click', async () => {
-      displayPopup(fishDetailUrl, fish, name, commentPopup, appId);
+      displayPopup(fish, name, commentPopup, appId);
     });
 
     // logic for creating the reservation button
