@@ -9,6 +9,7 @@ const commentPopup = document.querySelector('.comment-popup-section');
 const generateMarkup = (fishes, fishSection, likes) => {
   const fishesContainer = document.querySelector('.fishes_container');
   fishes.forEach((fish) => {
+    const { id } = fish;
     const name = fish['Species Name'];
 
     // get likes count for each item
@@ -25,7 +26,8 @@ const generateMarkup = (fishes, fishSection, likes) => {
     fishImg.alt = name;
     const fishArray = fish['Image Gallery'];
     if (fish['Image Gallery']) {
-      fishImg.src = fishArray instanceof Array
+      fishImg.src =
+        fishArray instanceof Array
           ? fish['Image Gallery'][0]?.src
           : fish['Image Gallery'].src;
     }
@@ -39,14 +41,15 @@ const generateMarkup = (fishes, fishSection, likes) => {
     const likeContainer = document.createElement('div');
     likeContainer.className = 'like_container';
     const likeIcon = document.createElement('span');
-    likeIcon.className = like.length < 1
+    likeIcon.className =
+      like.length < 1
         ? 'material-symbols-outlined'
         : 'material-symbols-rounded liked';
     likeIcon.innerText = 'favorite';
     let likesCount = like.length < 1 ? 0 : like[0].likes;
     const likeCount = document.createElement('h4');
     likeIcon.addEventListener('click', () => {
-      handleLike(name, appId);
+      handleLike(id, appId);
       likesCount += 1;
       likeCount.innerText = `${likesCount} likes`;
       likeIcon.className = 'material-symbols-rounded liked';

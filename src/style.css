@@ -65,6 +65,7 @@ html {
 
 .liked {
   color: rgb(165, 12, 38);
+  cursor: pointer;
 }
 
 .material-symbols-outlined {

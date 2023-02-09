@@ -7,7 +7,9 @@ const fetchFishes = async (url, numOfFishes, fishSection) => {
   try {
     const response = await fetch(url);
     const fishes = await response.json();
-
+    fishes.forEach((fish, index) => {
+      fish.id = `fworld${index}`;
+    });
     if (fishes) {
       const fetchedLikes = await fetchLikes(likesUrl);
 
@@ -17,10 +19,10 @@ const fetchFishes = async (url, numOfFishes, fishSection) => {
           .filter((fish) => fish['Image Gallery'] !== null)
           .filter((fish) => fish['Species Name'] !== 'Sablefish')
           .filter(
-            (fish) => fish['Species Name'] !== 'Hard Clam/Northern Quahog',
+            (fish) => fish['Species Name'] !== 'Hard Clam/Northern Quahog'
           ),
         fishSection,
-        fetchedLikes,
+        fetchedLikes
       );
     }
     return fishes;

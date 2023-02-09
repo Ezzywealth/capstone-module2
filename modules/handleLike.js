@@ -1,8 +1,8 @@
-const handleLike = async (name, appId) => {
+const handleLike = async (id, appId) => {
   const likesUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/likes`;
 
   const item = {
-    item_id: name,
+    item_id: id,
   };
 
   try {

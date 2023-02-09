@@ -1,6 +1,6 @@
-const submitComments = async (name, commentUrl, username, comment) => {
+const submitComments = async (id, commentUrl, username, comment) => {
   try {
-    const data = { item_id: name, username, comment };
+    const data = { item_id: id, username, comment };
     const options = {
       method: 'POST',
       body: JSON.stringify(data),

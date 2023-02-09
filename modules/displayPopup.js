@@ -6,14 +6,16 @@ import submitComments from './handleCommentSubmit.js';
 import updateCommentCount from './updateCommentCount.js';
 
 const displayPopup = async (fish, name, commentPopup, appId) => {
-  const commentsUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments?item_id=${name}`;
+  const { id } = fish;
+  const commentsUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments?item_id=${id}`;
   const comments = (await fetchComments(commentsUrl)) || [];
 
   // function to get the image link from the api data
   const fishArray = fish['Image Gallery'];
   let imageSrc = '';
   if (fish['Image Gallery']) {
-    imageSrc = fishArray instanceof Array
+    imageSrc =
+      fishArray instanceof Array
         ? fish['Image Gallery'][0]?.src
         : fish['Image Gallery'].src;
   }
@@ -47,7 +49,7 @@ const displayPopup = async (fish, name, commentPopup, appId) => {
     e.preventDefault();
     const username = usernameInput.value;
     const comment = commentInput.value;
-    const result = await submitComments(name, commentUrl, username, comment);
+    const result = await submitComments(id, commentUrl, username, comment);
 
     // fetch and display the updated comment in the dom if the comment submit was successful
     if (result === 'Created') {
