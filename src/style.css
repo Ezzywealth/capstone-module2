@@ -4,7 +4,8 @@ html {
   padding: 0;
   background-color: lightblue;
   font-family: 'Sanchez', serif;
-  width: 100vw;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .main_header {
@@ -16,6 +17,8 @@ html {
 
 #fish_container {
   margin-top: 100px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .header {
@@ -35,17 +38,17 @@ html {
 .fishes_container {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  padding: 1rem;
   row-gap: 1.5rem;
   column-gap: 3rem;
   margin-bottom: 2rem;
+  width: 100%;
 }
 
 .fish_container {
   padding: 1rem;
   background: #0093d0;
   border-radius: 10px;
-  margin-left: 1rem;
+  margin: 0 1rem;
 }
 
 .name_container {
@@ -203,7 +206,6 @@ footer {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
 }
 
 .sign-up {
