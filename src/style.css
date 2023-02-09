@@ -63,6 +63,10 @@ html {
   margin: 0;
 }
 
+.liked {
+  color: rgb(165, 12, 38);
+}
+
 .material-symbols-outlined {
   cursor: pointer;
 }
@@ -134,6 +138,7 @@ main {
   height: 70px;
   background: white;
   border-radius: 100%;
+  margin-left: 2rem;
 }
 
 .logo-block img {

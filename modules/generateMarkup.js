@@ -39,7 +39,9 @@ const generateMarkup = (fishes, fishSection, likes) => {
     const likeContainer = document.createElement('div');
     likeContainer.className = 'like_container';
     const likeIcon = document.createElement('span');
-    likeIcon.className = 'material-symbols-outlined';
+    likeIcon.className = like.length < 1
+        ? 'material-symbols-outlined'
+        : 'material-symbols-rounded liked';
     likeIcon.innerText = 'favorite';
     let likesCount = like.length < 1 ? 0 : like[0].likes;
     const likeCount = document.createElement('h4');
@@ -47,6 +49,7 @@ const generateMarkup = (fishes, fishSection, likes) => {
       handleLike(name, appId);
       likesCount += 1;
       likeCount.innerText = `${likesCount} likes`;
+      likeIcon.className = 'material-symbols-rounded liked';
     });
 
     likeCount.className = 'like_count';
