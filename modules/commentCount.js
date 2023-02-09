@@ -5,3 +5,4 @@ const commentCount = (section) => {
   return items;
 };
 export default commentCount;
+
