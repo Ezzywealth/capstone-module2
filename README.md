@@ -118,6 +118,12 @@ You can deploy this project by:
 - Twitter: [@EzzyWealth](https://twitter.com/EzzyWealth)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/ezekiel-udiomuno-b14539150/)
 
+👤 **Aubin**
+
+- GitHub: [@Ezzywealth](https://github.com/aubinleyoung)
+- Twitter: [@EzzyWealth](https://twitter.com/aubin_simpeze)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/aubin-simpeze-7a5b7a220/)
+
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] None at the moment
