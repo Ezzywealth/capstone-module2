@@ -26,8 +26,7 @@ const generateMarkup = (fishes, fishSection, likes) => {
     fishImg.alt = name;
     const fishArray = fish['Image Gallery'];
     if (fish['Image Gallery']) {
-      fishImg.src =
-        fishArray instanceof Array
+      fishImg.src = fishArray instanceof Array
           ? fish['Image Gallery'][0]?.src
           : fish['Image Gallery'].src;
     }
@@ -41,8 +40,7 @@ const generateMarkup = (fishes, fishSection, likes) => {
     const likeContainer = document.createElement('div');
     likeContainer.className = 'like_container';
     const likeIcon = document.createElement('span');
-    likeIcon.className =
-      like.length < 1
+    likeIcon.className = like.length < 1
         ? 'material-symbols-outlined'
         : 'material-symbols-rounded liked';
     likeIcon.innerText = 'favorite';

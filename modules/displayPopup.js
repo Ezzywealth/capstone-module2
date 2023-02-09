@@ -14,8 +14,7 @@ const displayPopup = async (fish, name, commentPopup, appId) => {
   const fishArray = fish['Image Gallery'];
   let imageSrc = '';
   if (fish['Image Gallery']) {
-    imageSrc =
-      fishArray instanceof Array
+    imageSrc = fishArray instanceof Array
         ? fish['Image Gallery'][0]?.src
         : fish['Image Gallery'].src;
   }
