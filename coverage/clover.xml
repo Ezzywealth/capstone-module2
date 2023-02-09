@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1675943659250" clover="3.2.0">
-  <project timestamp="1675943659251" name="All files">
+<coverage generated="1675944715246" clover="3.2.0">
+  <project timestamp="1675944715247" name="All files">
     <metrics statements="137" coveredstatements="80" conditionals="16" coveredconditionals="3" methods="18" coveredmethods="7" elements="171" coveredelements="90" complexity="0" loc="137" ncloc="137" packages="1" files="11" classes="11"/>
     <file name="commentCount.js" path="C:\Users\Hp\Documents\Microverse-project\Module2\capstone-module2\modules\commentCount.js">
       <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
