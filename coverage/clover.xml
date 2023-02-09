@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1675927013323" clover="3.2.0">
-  <project timestamp="1675927013324" name="All files">
-    <metrics statements="137" coveredstatements="71" conditionals="16" coveredconditionals="3" methods="18" coveredmethods="4" elements="171" coveredelements="78" complexity="0" loc="137" ncloc="137" packages="1" files="11" classes="11"/>
+<coverage generated="1675947891217" clover="3.2.0">
+  <project timestamp="1675947891217" name="All files">
+    <metrics statements="137" coveredstatements="80" conditionals="16" coveredconditionals="3" methods="18" coveredmethods="7" elements="171" coveredelements="90" complexity="0" loc="137" ncloc="137" packages="1" files="11" classes="11"/>
     <file name="commentCount.js" path="C:\Users\HP\Desktop\capstone-module2\modules\commentCount.js">
-      <metrics statements="5" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <line num="1" count="1" type="stmt"/>
-      <line num="2" count="0" type="stmt"/>
-      <line num="3" count="0" type="stmt"/>
-      <line num="4" count="0" type="stmt"/>
-      <line num="5" count="0" type="stmt"/>
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="1" count="2" type="stmt"/>
+      <line num="2" count="2" type="stmt"/>
+      <line num="3" count="2" type="stmt"/>
+      <line num="4" count="2" type="stmt"/>
+      <line num="5" count="2" type="stmt"/>
     </file>
     <file name="displayComments.js" path="C:\Users\HP\Desktop\capstone-module2\modules\displayComments.js">
-      <metrics statements="6" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-      <line num="1" count="1" type="stmt"/>
-      <line num="2" count="0" type="stmt"/>
-      <line num="3" count="0" type="stmt"/>
-      <line num="4" count="0" type="stmt"/>
-      <line num="19" count="0" type="stmt"/>
-      <line num="20" count="0" type="stmt"/>
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <line num="1" count="2" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="3" count="3" type="stmt"/>
+      <line num="4" count="3" type="stmt"/>
+      <line num="5" count="3" type="stmt"/>
+      <line num="6" count="3" type="stmt"/>
     </file>
     <file name="displayLikes.js" path="C:\Users\HP\Desktop\capstone-module2\modules\displayLikes.js">
       <metrics statements="6" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="1"/>
