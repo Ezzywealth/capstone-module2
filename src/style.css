@@ -8,6 +8,11 @@ html {
   box-sizing: border-box;
 }
 
+main {
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .main_header {
   text-align: center;
   font-size: 2rem;
@@ -27,6 +32,7 @@ html {
   margin-top: 10rem;
   align-items: center;
   justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .fish_count {
@@ -133,10 +139,6 @@ header {
   width: 100%;
 }
 
-main {
-  width: 100%;
-}
-
 .logo-block {
   width: 70px;
   height: 70px;
@@ -201,7 +203,7 @@ main {
 
 footer {
   background: #53738f;
-  padding: 1rem;
+  padding: 1rem 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -350,12 +352,16 @@ textarea:focus {
 }
 
 @media screen and (min-width: 700px) {
+  .logo-block {
+    margin-left: 0;
+  }
+
   .fishes_container {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     row-gap: 3rem;
     column-gap: 1rem;
-    padding: 1rem;
+    padding: 1rem 0;
   }
 
   #fish_container {
@@ -365,7 +371,7 @@ textarea:focus {
 
   footer {
     background: #53738f;
-    padding: 20px;
+    padding: 20px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -412,9 +418,10 @@ textarea:focus {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     row-gap: 3rem;
-    column-gap: 2rem;
-    padding: 3rem 5rem;
-    gap: 2rem;
+    column-gap: 1rem;
+    padding: 3rem 3rem;
+    padding-top: 0;
+    box-sizing: border-box;
   }
 
   .image_container {
