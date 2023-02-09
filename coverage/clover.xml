@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1675944715246" clover="3.2.0">
-  <project timestamp="1675944715247" name="All files">
+<coverage generated="1675947891217" clover="3.2.0">
+  <project timestamp="1675947891217" name="All files">
     <metrics statements="137" coveredstatements="80" conditionals="16" coveredconditionals="3" methods="18" coveredmethods="7" elements="171" coveredelements="90" complexity="0" loc="137" ncloc="137" packages="1" files="11" classes="11"/>
-    <file name="commentCount.js" path="C:\Users\Hp\Documents\Microverse-project\Module2\capstone-module2\modules\commentCount.js">
+    <file name="commentCount.js" path="C:\Users\HP\Desktop\capstone-module2\modules\commentCount.js">
       <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="1" count="2" type="stmt"/>
       <line num="2" count="2" type="stmt"/>
@@ -10,7 +10,7 @@
       <line num="4" count="2" type="stmt"/>
       <line num="5" count="2" type="stmt"/>
     </file>
-    <file name="displayComments.js" path="C:\Users\Hp\Documents\Microverse-project\Module2\capstone-module2\modules\displayComments.js">
+    <file name="displayComments.js" path="C:\Users\HP\Desktop\capstone-module2\modules\displayComments.js">
       <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <line num="1" count="2" type="stmt"/>
       <line num="2" count="1" type="stmt"/>
@@ -19,7 +19,7 @@
       <line num="5" count="3" type="stmt"/>
       <line num="6" count="3" type="stmt"/>
     </file>
-    <file name="displayLikes.js" path="C:\Users\Hp\Documents\Microverse-project\Module2\capstone-module2\modules\displayLikes.js">
+    <file name="displayLikes.js" path="C:\Users\HP\Desktop\capstone-module2\modules\displayLikes.js">
       <metrics statements="6" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="1"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="6" type="stmt"/>
@@ -28,7 +28,7 @@
       <line num="6" count="0" type="stmt"/>
       <line num="8" count="6" type="stmt"/>
     </file>
-    <file name="displayPopup.js" path="C:\Users\Hp\Documents\Microverse-project\Module2\capstone-module2\modules\displayPopup.js">
+    <file name="displayPopup.js" path="C:\Users\HP\Desktop\capstone-module2\modules\displayPopup.js">
       <metrics statements="26" coveredstatements="1" conditionals="6" coveredconditionals="0" methods="3" coveredmethods="0"/>
       <line num="8" count="1" type="stmt"/>
       <line num="9" count="0" type="stmt"/>
@@ -57,7 +57,7 @@
       <line num="54" count="0" type="stmt"/>
       <line num="55" count="0" type="stmt"/>
     </file>
-    <file name="fetchComment.js" path="C:\Users\Hp\Documents\Microverse-project\Module2\capstone-module2\modules\fetchComment.js">
+    <file name="fetchComment.js" path="C:\Users\HP\Desktop\capstone-module2\modules\fetchComment.js">
       <metrics statements="8" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="0" type="stmt"/>
@@ -68,14 +68,14 @@
       <line num="10" count="0" type="stmt"/>
       <line num="12" count="0" type="stmt"/>
     </file>
-    <file name="fetchFishDetails.js" path="C:\Users\Hp\Documents\Microverse-project\Module2\capstone-module2\modules\fetchFishDetails.js">
+    <file name="fetchFishDetails.js" path="C:\Users\HP\Desktop\capstone-module2\modules\fetchFishDetails.js">
       <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="0" type="stmt"/>
       <line num="3" count="0" type="stmt"/>
       <line num="4" count="0" type="stmt"/>
     </file>
-    <file name="generateMarkup.js" path="C:\Users\Hp\Documents\Microverse-project\Module2\capstone-module2\modules\generateMarkup.js">
+    <file name="generateMarkup.js" path="C:\Users\HP\Desktop\capstone-module2\modules\generateMarkup.js">
       <metrics statements="59" coveredstatements="55" conditionals="6" coveredconditionals="3" methods="4" coveredmethods="2"/>
       <line num="6" count="1" type="stmt"/>
       <line num="7" count="1" type="stmt"/>
@@ -137,12 +137,12 @@
       <line num="88" count="1" type="stmt"/>
       <line num="89" count="1" type="stmt"/>
     </file>
-    <file name="generatePopup.js" path="C:\Users\Hp\Documents\Microverse-project\Module2\capstone-module2\modules\generatePopup.js">
+    <file name="generatePopup.js" path="C:\Users\HP\Desktop\capstone-module2\modules\generatePopup.js">
       <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="0" type="stmt"/>
     </file>
-    <file name="handleCommentSubmit.js" path="C:\Users\Hp\Documents\Microverse-project\Module2\capstone-module2\modules\handleCommentSubmit.js">
+    <file name="handleCommentSubmit.js" path="C:\Users\HP\Desktop\capstone-module2\modules\handleCommentSubmit.js">
       <metrics statements="8" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="0" type="stmt"/>
@@ -153,7 +153,7 @@
       <line num="11" count="0" type="stmt"/>
       <line num="13" count="0" type="stmt"/>
     </file>
-    <file name="handleLike.js" path="C:\Users\Hp\Documents\Microverse-project\Module2\capstone-module2\modules\handleLike.js">
+    <file name="handleLike.js" path="C:\Users\HP\Desktop\capstone-module2\modules\handleLike.js">
       <metrics statements="8" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="0" type="stmt"/>
@@ -164,7 +164,7 @@
       <line num="17" count="0" type="stmt"/>
       <line num="19" count="0" type="stmt"/>
     </file>
-    <file name="itemCount.js" path="C:\Users\Hp\Documents\Microverse-project\Module2\capstone-module2\modules\itemCount.js">
+    <file name="itemCount.js" path="C:\Users\HP\Desktop\capstone-module2\modules\itemCount.js">
       <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="3" type="stmt"/>
