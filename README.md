@@ -52,7 +52,9 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- Visit the live demo [here](https://mohisa302.github.io/Todolist/dist/)
+No live demo yet
+
+<!-- - Visit the live demo [here](https://mohisa302.github.io/Todolist/dist/) -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -79,14 +81,14 @@ To clone this repository to your desired folder, follow the steps below:
 
 ```sh
   cd my-folder
-  git clone https://github.com/mohisa302/Todolist.git
+  git clone https://github.com/Ezzywealth/capstone-module2
 ```
 
 **Using GitHub Desktop app**
 
 - Follow the steps below
 
-  - Visit this link "https://github.com/mohisa302/Todolist.git"
+  - Visit this link "https://github.com/Ezzywealth/capstone-module2"
   - Click the green button labelled "code"
   - Select the "Open with GitHub Desktop" option
   - After the GitHub Desktop add opens, click the "clone repo" button
@@ -110,17 +112,15 @@ You can deploy this project by:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Mohi**
+👤 **Ezekiel**
 
-- GitHub: [@mohisa302](https://github.com/mohisa302)
-- Twitter: [@Kholochelam](https://twitter.com/Kholochelam)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/mohadese-sadeghi-692551199/)
+- GitHub: [@Ezzywealth](https://github.com/Ezzywealth)
+- Twitter: [@EzzyWealth](https://twitter.com/EzzyWealth)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/ezekiel-udiomuno-b14539150/)
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[will improve page elements]**
-- [ ] **[will improve styles]**
-- [ ] **[will improve js functionality]**
+- [ ] None at the moment
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
