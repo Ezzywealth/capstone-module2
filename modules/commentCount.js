@@ -1,7 +1,7 @@
 const commentCount = (section) => {
-  const commentsContainer = document.getElementById('comment-title');
+  const itemsCount = document.querySelector('.items_count');
   const items = Array.from(section.children);
-  commentsContainer.innerText += ` (${items.length})`;
+  itemsCount.innerText += ` (${items.length})`;
   return items;
 };
 export default commentCount;

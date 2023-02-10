@@ -4,12 +4,12 @@ import displayPopup from './displayPopup.js';
 import displayLikes from './displayLikes.js';
 
 const appId = 'daS11VuHj0e3k7bb2TZc';
-const fishDetailUrl = 'https://www.fishwatch.gov/api/species';
 
 const commentPopup = document.querySelector('.comment-popup-section');
 const generateMarkup = (fishes, fishSection, likes) => {
   const fishesContainer = document.querySelector('.fishes_container');
   fishes.forEach((fish) => {
+    const { id } = fish;
     const name = fish['Species Name'];
 
     // get likes count for each item
@@ -27,8 +27,8 @@ const generateMarkup = (fishes, fishSection, likes) => {
     const fishArray = fish['Image Gallery'];
     if (fish['Image Gallery']) {
       fishImg.src = fishArray instanceof Array
-        ? fish['Image Gallery'][0]?.src
-        : fish['Image Gallery'].src;
+          ? fish['Image Gallery'][0]?.src
+          : fish['Image Gallery'].src;
     }
 
     const nameContainer = document.createElement('div');
@@ -40,14 +40,17 @@ const generateMarkup = (fishes, fishSection, likes) => {
     const likeContainer = document.createElement('div');
     likeContainer.className = 'like_container';
     const likeIcon = document.createElement('span');
-    likeIcon.className = 'material-symbols-outlined';
+    likeIcon.className = like.length < 1
+        ? 'material-symbols-outlined'
+        : 'material-symbols-rounded liked';
     likeIcon.innerText = 'favorite';
     let likesCount = like.length < 1 ? 0 : like[0].likes;
     const likeCount = document.createElement('h4');
     likeIcon.addEventListener('click', () => {
-      handleLike(name, appId);
+      handleLike(id, appId);
       likesCount += 1;
       likeCount.innerText = `${likesCount} likes`;
+      likeIcon.className = 'material-symbols-rounded liked';
     });
 
     likeCount.className = 'like_count';
@@ -64,7 +67,7 @@ const generateMarkup = (fishes, fishSection, likes) => {
 
     // logic to display the popup when the button is clicked
     commentBtn.addEventListener('click', async () => {
-      displayPopup(fishDetailUrl, fish, name, commentPopup, appId);
+      displayPopup(fish, name, commentPopup, appId);
     });
 
     // logic for creating the reservation button

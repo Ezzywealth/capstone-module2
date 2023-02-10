@@ -66,6 +66,7 @@ describe('TodoApp', () => {
       </div>
     <section class="fishes_container"></section>
     </section>`;
+
     const section = document.querySelector('.fishes_container');
     expect(itemsCount(section)).toHaveLength(0);
   });
