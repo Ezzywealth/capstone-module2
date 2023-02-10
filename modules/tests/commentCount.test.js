@@ -17,13 +17,12 @@ const comments = [
     username: 'Marc',
     comment: 'Great',
   },
-
 ];
 describe('TodoApp', () => {
   test('Number of comments In the DOM before API fetch', () => {
-   document.body.innerHTML = `
+    document.body.innerHTML = `
    <div class="comment-container">
-   <h3 id="comment-title">Comments </h3>
+   <h3 id="comment-title">Comments <span class='items_count'></span></h3>
    <div id="comment-list">
 
    </div>
@@ -36,12 +35,12 @@ describe('TodoApp', () => {
     document.body.innerHTML = `
  
     <div class="comment-container">
-    <h3 id="comment-title">Comments </h3>
+    <h3 id="comment-title">Comments <span class='items_count'></span></h3>
     <div id="comment-list">
 
     </div>
    </div>`;
-   const section = document.getElementById('comment-list');
+    const section = document.getElementById('comment-list');
 
     displayComments(comments, section);
     expect(commentCount(section)).toHaveLength(3);

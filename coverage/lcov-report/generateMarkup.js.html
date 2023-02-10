@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.22% </span>
+                <span class="strong">91.66% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>55/59</span>
+                <span class='fraction'>55/60</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/6</span>
+                <span class='fraction'>4/8</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.22% </span>
+                <span class="strong">91.66% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>55/59</span>
+                <span class='fraction'>55/60</span>
             </div>
         
             
@@ -154,28 +154,26 @@
 <a name='L89'></a><a href='#L89'>89</a>
 <a name='L90'></a><a href='#L90'>90</a>
 <a name='L91'></a><a href='#L91'>91</a>
-<a name='L92'></a><a href='#L92'>92</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -184,23 +182,31 @@
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -251,12 +257,12 @@ import displayPopup from './displayPopup.js';
 import displayLikes from './displayLikes.js';
 &nbsp;
 const appId = 'daS11VuHj0e3k7bb2TZc';
-const fishDetailUrl = 'https://www.fishwatch.gov/api/species';
 &nbsp;
 const commentPopup = document.querySelector('.comment-popup-section');
 const generateMarkup = (fishes, fishSection, likes) =&gt; {
   const fishesContainer = document.querySelector('.fishes_container');
   fishes.forEach((fish) =&gt; {
+    const { id } = fish;
     const name = fish['Species Name'];
 &nbsp;
     // get likes count for each item
@@ -274,8 +280,8 @@ const generateMarkup = (fishes, fishSection, likes) =&gt; {
     const fishArray = fish['Image Gallery'];
     <span class="missing-if-branch" title="else path not taken" >E</span>if (fish['Image Gallery']) {
       fishImg.src = fishArray instanceof Array
-        ? fish['Image Gallery'][0]?.src
-        : <span class="branch-1 cbranch-no" title="branch not covered" >fish['Image Gallery'].src;</span>
+          ? fish['Image Gallery'][0]?.src
+          : <span class="branch-1 cbranch-no" title="branch not covered" >fish['Image Gallery'].src;</span>
     }
 &nbsp;
     const nameContainer = document.createElement('div');
@@ -287,14 +293,17 @@ const generateMarkup = (fishes, fishSection, likes) =&gt; {
     const likeContainer = document.createElement('div');
     likeContainer.className = 'like_container';
     const likeIcon = document.createElement('span');
-    likeIcon.className = 'material-symbols-outlined';
+    likeIcon.className = like.length &lt; 1
+        ? 'material-symbols-outlined'
+        : <span class="branch-1 cbranch-no" title="branch not covered" >'material-symbols-rounded liked';</span>
     likeIcon.innerText = 'favorite';
     let likesCount = like.length &lt; 1 ? 0 : <span class="branch-1 cbranch-no" title="branch not covered" >like[0].likes;</span>
     const likeCount = document.createElement('h4');
     likeIcon.addEventListener('click', <span class="fstat-no" title="function not covered" >()</span> =&gt; {
-<span class="cstat-no" title="statement not covered" >      handleLike(name, appId);</span>
+<span class="cstat-no" title="statement not covered" >      handleLike(id, appId);</span>
 <span class="cstat-no" title="statement not covered" >      likesCount += 1;</span>
 <span class="cstat-no" title="statement not covered" >      likeCount.innerText = `${likesCount} likes`;</span>
+<span class="cstat-no" title="statement not covered" >      likeIcon.className = 'material-symbols-rounded liked';</span>
     });
 &nbsp;
     likeCount.className = 'like_count';
@@ -311,7 +320,7 @@ const generateMarkup = (fishes, fishSection, likes) =&gt; {
 &nbsp;
     // logic to display the popup when the button is clicked
     commentBtn.addEventListener('click', <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {
-<span class="cstat-no" title="statement not covered" >      displayPopup(fishDetailUrl, fish, name, commentPopup, appId);</span>
+<span class="cstat-no" title="statement not covered" >      displayPopup(fish, name, commentPopup, appId);</span>
     });
 &nbsp;
     // logic for creating the reservation button
@@ -343,7 +352,7 @@ export default generateMarkup;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-02-09T13:04:51.170Z
+                at 2023-02-10T12:48:50.594Z
             </div>
         <script src="prettify.js"></script>
         <script>

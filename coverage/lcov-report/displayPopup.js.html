@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">3.84% </span>
+                <span class="strong">3.12% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/26</span>
+                <span class='fraction'>1/32</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>0/8</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">3.84% </span>
+                <span class="strong">3.12% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/26</span>
+                <span class='fraction'>1/32</span>
             </div>
         
             
@@ -122,7 +122,12 @@
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -132,11 +137,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -177,6 +178,15 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -184,31 +194,27 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import commentCount from './commentCount.js';
 import displayComments from './displayComments.js';
 import fetchComments from './fetchComment.js';
-import fetchFishDetails from './fetchFishDetails.js';
 import generatePopup from './generatePopup.js';
 import submitComments from './handleCommentSubmit.js';
+import updateCommentCount from './updateCommentCount.js';
 &nbsp;
-const displayPopup = <span class="fstat-no" title="function not covered" >as</span>ync (fishDetailUrl, fish, name, commentPopup, appId) =&gt; {
-  const commentsUrl = <span class="cstat-no" title="statement not covered" >`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments?item_id=${name}`;</span>
+const displayPopup = <span class="fstat-no" title="function not covered" >as</span>ync (fish, name, commentPopup, appId) =&gt; {
+  const { id } = <span class="cstat-no" title="statement not covered" >fish;</span>
+  const commentsUrl = <span class="cstat-no" title="statement not covered" >`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments?item_id=${id}`;</span>
   const comments = <span class="cstat-no" title="statement not covered" >(await fetchComments(commentsUrl)) || [];</span>
 &nbsp;
-  const fishDetails = <span class="cstat-no" title="statement not covered" >await fetchFishDetails(</span>
-    fishDetailUrl,
-    fish['Species Name'],
-  );
-&nbsp;
   // function to get the image link from the api data
-  const fishArray = <span class="cstat-no" title="statement not covered" >fishDetails[0]['Image Gallery'];</span>
+  const fishArray = <span class="cstat-no" title="statement not covered" >fish['Image Gallery'];</span>
   let imageSrc = <span class="cstat-no" title="statement not covered" >'';</span>
-<span class="cstat-no" title="statement not covered" >  if (fishDetails[0]['Image Gallery']) {</span>
+<span class="cstat-no" title="statement not covered" >  if (fish['Image Gallery']) {</span>
 <span class="cstat-no" title="statement not covered" >    imageSrc = fishArray instanceof Array</span>
-      ? fishDetails[0]['Image Gallery'][0]?.src
-      : fishDetails[0]['Image Gallery'].src;
+        ? fish['Image Gallery'][0]?.src
+        : fish['Image Gallery'].src;
   }
 &nbsp;
   // logic to show the popup fo a particular image
 <span class="cstat-no" title="statement not covered" >  commentPopup.classList.add('active');</span>
-<span class="cstat-no" title="statement not covered" >  generatePopup(commentPopup, fishDetails, imageSrc);</span>
+<span class="cstat-no" title="statement not covered" >  generatePopup(commentPopup, fish, imageSrc);</span>
 &nbsp;
   // function to close the popup when the close icon is clicked
   const closePopup = <span class="cstat-no" title="statement not covered" >document.querySelector('.close-popup');</span>
@@ -231,11 +237,20 @@ const displayPopup = <span class="fstat-no" title="function not covered" >as</sp
 <span class="cstat-no" title="statement not covered" >  commentCount(commentsContainer);</span>
 &nbsp;
   // Submit button click event handler
-<span class="cstat-no" title="statement not covered" >  submitComment.addEventListener('submit', <span class="fstat-no" title="function not covered" >(e</span>) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  submitComment.addEventListener('submit', <span class="fstat-no" title="function not covered" >as</span>ync (e) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    e.preventDefault();</span>
     const username = <span class="cstat-no" title="statement not covered" >usernameInput.value;</span>
     const comment = <span class="cstat-no" title="statement not covered" >commentInput.value;</span>
-<span class="cstat-no" title="statement not covered" >    submitComments(name, commentUrl, appId, username, comment);</span>
+    const result = <span class="cstat-no" title="statement not covered" >await submitComments(id, commentUrl, username, comment);</span>
+&nbsp;
+    // fetch and display the updated comment in the dom if the comment submit was successful
+<span class="cstat-no" title="statement not covered" >    if (result === 'Created') {</span>
+      const newComments = <span class="cstat-no" title="statement not covered" >await fetchComments(commentsUrl);</span>
+<span class="cstat-no" title="statement not covered" >      commentsContainer.innerHTML = '';</span>
+<span class="cstat-no" title="statement not covered" >      displayComments(newComments, commentsContainer);</span>
+<span class="cstat-no" title="statement not covered" >      updateCommentCount(newComments.length);</span>
+<span class="cstat-no" title="statement not covered" >      submitComment.reset();</span>
+    }
   });
   // end
 };
@@ -247,7 +262,7 @@ export default displayPopup;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-02-09T13:04:51.170Z
+                at 2023-02-10T12:48:50.594Z
             </div>
         <script src="prettify.js"></script>
         <script>

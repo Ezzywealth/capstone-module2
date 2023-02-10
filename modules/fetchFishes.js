@@ -1,7 +1,8 @@
 import generateMarkup from './generateMarkup.js';
 import fetchLikes from './fetchLikes.js';
+import appID from '../appId.js';
 
-const appId = 'daS11VuHj0e3k7bb2TZc';
+const appId = appID;
 const footer = document.querySelector('.fixed');
 const fetchFishes = async (url, numOfFishes, fishSection) => {
   const likesUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/likes`;
@@ -20,10 +21,10 @@ const fetchFishes = async (url, numOfFishes, fishSection) => {
           .filter((fish) => fish['Image Gallery'] !== null)
           .filter((fish) => fish['Species Name'] !== 'Sablefish')
           .filter(
-            (fish) => fish['Species Name'] !== 'Hard Clam/Northern Quahog',
+            (fish) => fish['Species Name'] !== 'Hard Clam/Northern Quahog'
           ),
         fishSection,
-        fetchedLikes,
+        fetchedLikes
       );
       footer.classList.remove('fixed');
     }

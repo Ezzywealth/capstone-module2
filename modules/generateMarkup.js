@@ -2,8 +2,9 @@ import handleLike from './handleLike.js';
 import itemsCount from './itemCount.js';
 import displayPopup from './displayPopup.js';
 import displayLikes from './displayLikes.js';
+import appID from '../appId.js';
 
-const appId = 'daS11VuHj0e3k7bb2TZc';
+const appId = appID;
 
 const commentPopup = document.querySelector('.comment-popup-section');
 const generateMarkup = (fishes, fishSection, likes) => {
@@ -26,7 +27,8 @@ const generateMarkup = (fishes, fishSection, likes) => {
     fishImg.alt = name;
     const fishArray = fish['Image Gallery'];
     if (fish['Image Gallery']) {
-      fishImg.src = fishArray instanceof Array
+      fishImg.src =
+        fishArray instanceof Array
           ? fish['Image Gallery'][0]?.src
           : fish['Image Gallery'].src;
     }
@@ -40,7 +42,8 @@ const generateMarkup = (fishes, fishSection, likes) => {
     const likeContainer = document.createElement('div');
     likeContainer.className = 'like_container';
     const likeIcon = document.createElement('span');
-    likeIcon.className = like.length < 1
+    likeIcon.className =
+      like.length < 1
         ? 'material-symbols-outlined'
         : 'material-symbols-rounded liked';
     likeIcon.innerText = 'favorite';
