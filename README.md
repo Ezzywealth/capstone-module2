@@ -54,7 +54,7 @@
 
 No live demo yet
 
-<!-- - Visit the live demo [here](https://mohisa302.github.io/Todolist/dist/) -->
+- Visit the live demo [here](https://ezzywealth.github.io/capstone-module2/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
